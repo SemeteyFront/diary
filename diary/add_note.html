@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/add_note.css">
+  <title>Diary</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <img class="logo__img" src="./images/logo.svg">
+        <h1 class="logo__title">Дневник</h1>
+      </div>
+      <nav class="main-nav">
+        <a href="./index.html" class="btn btn--primary">
+          <img src="./images/grid_icon.png" alt="">
+          <span>Список</span>
+        </a>
+        <a href="./add_note.html" class="btn">
+          <img src="./images/pen_icon.svg" alt="">
+          <span>Запись</span>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <div class="note-img note-img--filled"></div>
+      <form class="add-form">
+        <input type="text" class="input" placeholder="Название">
+        <div class="add-form__row">
+          <select class="input mood-select">
+            <option></option>
+            <option>😌</option>
+            <option>😆</option>
+            <option>😑</option>
+            <option>🤔</option>
+          </select>
+          <input type="date" class="input" placeholder="Дата">
+        </div>
+        <textarea class="input add-form__textarea" placeholder="Описание"></textarea>
+        <button type="button" class="btn add-form__btn">
+          <img src="" alt="">
+          <span>Создать</span>
+        </button>
+      </form>
+      <section class="add-image">
+        <form class="search">
+          <input type="search" class="input">
+          <button class="btn search__btn">
+            <img src="./images/search_icon.svg" alt="search">
+          </button>
+        </form>
+        <section class="gallery"></section>
+      </section>
+    </main>
+  </div>
+  <script src="./scripts/data.js"></script>
+  <script src="./scripts/utils.js"></script>
+  <script src="./scripts/add_note.js"></script>
+</body>
+</html>

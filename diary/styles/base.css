@@ -1,0 +1,159 @@
+:root {
+  --main-bg: #FDFCF3;
+  --accent-bg: linear-gradient(135deg, #61B15A 0%, #ADCE74 100%);
+  --text-color: #1E2022;
+  --secondary: #ACACAC;
+  --primary: #FFCE89;
+  --font: 'Roboto', sans-serif;
+  --main-color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--main-bg);
+  color: var(--text-color);
+  font-family: var(--font);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+input, button, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  background: none;
+}
+
+.input {
+  padding-left: 16px;
+  font-size: 18px;
+  font-weight: 300;
+  background: var(--main-color);
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+
+}
+
+.input::placeholder {
+  color: var(--secondary);
+}
+
+.btn {
+  display: inline-grid;
+  grid-auto-flow: column;
+  column-gap: 15px;
+  background: var(--accent-bg);
+  height: 40px;
+  width: 166px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: var(--text-color);
+}
+
+.container {
+  padding: 36px 40px 120px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr auto;
+  column-gap: 35px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.logo {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  column-gap: 18px;
+  align-items: center;
+}
+
+.logo__title {
+  font-size: 36px;
+}
+
+.mood-select {
+  border: 0;
+  font-size: 24px;
+}
+
+.main-nav {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 14px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 36px 80px 120px;
+  }
+  .header {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-between;
+    row-gap: 30px;
+    grid-template-areas:
+      "logo nav"
+      "filter filter";
+  }
+  .logo {
+    grid-area: logo;
+  }
+  .main-nav {
+    grid-area: nav;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    bottom: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 460px) {
+  .container {
+    padding: 20px;
+  }
+  .main-nav .btn {
+    width: 100%;
+  }
+  .main-nav {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: stretch;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo {
+    margin-bottom: 28px;
+  }
+  .logo__title {
+    font-size: 24px;
+  }
+  .main-nav a span {
+    display: none;
+  }
+}

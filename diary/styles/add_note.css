@@ -1,0 +1,146 @@
+.header {
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+}
+
+.note-img {
+  display: none;
+}
+
+.add-form {
+  display: grid;
+  row-gap: 16px;
+  align-content: start;
+}
+
+.add-form__row {
+  display: grid;
+  grid-template-columns: 100px 210px;
+  column-gap: 16px;
+}
+
+.add-form__textarea {
+  padding-top: 20px;
+  height: 478px;
+  resize: none;
+}
+
+.add-form .btn {
+  justify-self: end;
+  margin-top: 4px;
+}
+
+
+.gallery {
+  column-count: 2;
+  column-gap: 14px;
+}
+
+.image {
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.image--selected::before {
+  content: "";
+  display: block;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-image: url('../images/check_icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: calc(50% - 30px);
+  top: calc(50% - 30px);
+}
+
+
+.image__source {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  column-gap: 14px;
+  margin-bottom: 30px;
+}
+
+.search__btn {
+  --search-btn-color: #FFF76A;
+  width: 100%;
+  height: 100%;
+  background: var(--search-btn-color);
+}
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+  .add-form {
+    grid-template-columns: 1fr auto;
+    column-gap: 16px;
+  }
+  .add-form__textarea {
+    grid-column: 1 / -1;
+  }
+  .add-form__btn {
+    position: fixed;
+    z-index: 9;
+    right: 80px;
+    bottom: 40px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 600px) {
+  .note-img {
+    display: block;
+    height: 200px;
+    border-radius: 12px;
+    background: var(--main-color);
+    /* background-image: url("../images/img_icon.svg"); */
+    background-image: url("../images/img_icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .note-img--filled {
+    background-image: url("../images/note_img.png");
+    background-size: cover;
+  }
+  .add-image {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    z-index: 10;
+    background: rgba(50, 47, 40, 0.7);
+    padding-top: 100px;
+  }
+  .add-image--show {
+    display: block;
+  }
+  .gallery {
+    column-count: 1;
+  }
+  .search {
+    position: fixed;
+    width: calc(100% - 40px);
+    z-index: 11;
+    top: 20px;
+  }
+}
